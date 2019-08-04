@@ -28,7 +28,7 @@ def nasarequest():
 		now = datetime.datetime.today() #get today's date
 		m = now.strftime('%m') #format date to 2-digit month and day
 		d = now.strftime('%d')
-		date = f'{now.year-1}-{m}-{d}' #set date as today, last year	
+		date = str(now.year-1)+'-'+str(m)+'-'+str(d) #set date as today, last year	
 		#check which API to request
 		if form.apod.data:
 			url = 'https://api.nasa.gov/planetary/apod?' #set API url
