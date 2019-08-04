@@ -1,3 +1,1 @@
 steps:
-- name: gcr.io/cisc3140python2/git
-  args: ['pull', 'https://github.com/chalshaff12/cisc3140python2.git']
