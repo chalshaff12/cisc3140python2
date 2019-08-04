@@ -1,5 +1,5 @@
 steps:
-- name: gcr.io/cisc3140python2/git
+- name: gcr.io/cisc3140-248419/git
   args: ['pull', 'https://github.com/chalshaff12/cisc3140python2.git']
 
-images: ['gcr.io/cisc3140python2/myimage']
+images: ['gcr.io/cisc3140-248419/myimage']
