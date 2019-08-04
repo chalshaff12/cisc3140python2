@@ -35,13 +35,13 @@ def nasarequest():
 			page = 'nasaApod.html' #set redirect template
 		elif form.rover.data:
 			sol = random.randint(1,2500) #random number for sol
-			url = f'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol={sol}&page=2&' #set API url with random sol input
+			url = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol='+str(sol)+'&page=2&' #set API url with random sol input
 			page = 'nasaRover.html' #set redirect template
 		elif form.epic.data:
-			url = f'https://api.nasa.gov/EPIC/api/natural/date/{date}?' #set API url
+			url = 'https://api.nasa.gov/EPIC/api/natural/date/'+str(date)+'?' #set API url
 			page = 'nasaEpic.html' #set redirect template
-			date = f'{now.year-1}/{m}/{d}' #change date format image pull in html
-		res = requests.get(f'{url}api_key={apikey}') #call api
+			date = str(now.year-1)+'/'+str(m)+'/'+str(d) #change date format image pull in html
+		res = requests.get(url+'api_key='+apikey) #call api
 		status = res.status_code #get api page status to validate apikey
 		if status == 403: #invalid api key error
 			flash('Please enter a valid API Key or use the DEMO_KEY')
