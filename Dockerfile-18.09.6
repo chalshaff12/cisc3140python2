@@ -1,9 +1,8 @@
 FROM launcher.gcr.io/google/ubuntu16_04
 
-CMD
-  virtualenv --python python3 ~/envs/venv
-  source ~/envs/venv/bin/activate
-  pip install -r requirements.txt
-  flask run
+CMD virtualenv --python python3 ~/envs/venv
+CMD  source ~/envs/venv/bin/activate
+CMD  pip install -r requirements.txt
+CMD  flask run
 
 ENTRYPOINT ["/cisc3140python2"]
