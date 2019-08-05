@@ -6,8 +6,6 @@ steps:
   - 'build'
   - '--tag=gcr.io/$PROJECT_ID/docker:18.09.6'
   - '--file=Dockerfile-18.09.6'
-  - 'gcr.io/$PROJECT_ID/myimage'
   - '.'
   id: '18.09.6'
-  # images: 
-  #   - 'gcr.io/$PROJECT_ID/myimage'
+# Future supported versions of docker builder go here.
