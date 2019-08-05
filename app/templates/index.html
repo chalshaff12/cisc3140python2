@@ -2,9 +2,14 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<!--display home-page data-->
-	<h1>Welcome!</h1>
-	<br>
-	<a href="{{ url_for('nasarequest') }}">Click here to see data from Nasa!</a>
-	<p>There are three APIs to choose from, have a look!</p>
+
+<div class="jumbotron">
+  <h1 class="display-4">Welcome to my cisc3140 page</h1>
+  <p class="lead">For now, we have data from NASA's API, with more page features in the works!</p>
+  <hr class="my-4">
+  <p>You can check out three pages pulling images and cool data from NASA's various APIs</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="{{ url_for('nasarequest') }}" role="button">Check it out</a>
+  </p>
+</div>
 {% endblock %}
