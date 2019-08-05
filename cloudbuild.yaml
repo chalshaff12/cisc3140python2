@@ -1,25 +1,11 @@
 
-
-gcr.io/cloud-builders/gcs-fetcher 
-— 
---type=Manifest 
---location=gs://staging.cisc3140-248419.appspot.com/ae/d10a250f-1b41-4951-81c3-c201dd5ce43b/manifest.json 
---dest_dir=/workspace
-
-gcr.io/gae-runtimes/python37_app_builder:python37_20190527_3_7_3_RC00 
-— --runtime=python37 
---entrypoint= 
---src=/workspace 
---config-file=/.googleconfig/app_start.json 
--- python3 /parse_workspace/build.py 
---parser_script=/usr/local/bin/ftl.par 
---src= 
---entrypoint= 
---name=us.gcr.io/cisc3140-248419/app-engine-tmp/app/ttl-2h:d10a250f-1b41-4951-81c3-c201dd5ce43b 
---directory=/workspace 
---destination=/srv 
---cache-repository=us.gcr.io/cisc3140-248419/app-engine-tmp/build-cache/ttl-7d --cache 
---builder-output-path="" 
---additional-directory=/.googleconfig 
---python-cmd=/opt/python3.7/bin/python3.7 "--pip-cmd=/env/bin/python3.7 -m pip" "--venv-cmd=/opt/python3.7/bin/python3.7 -m venv /env" -v=DEBUG 
---base=us.gcr.io/gae-runtimes/python37:python37_20190527_3_7_3_RC00
+steps:
+# Build all supported versions.
+- name: 'gcr.io/cloud-builders/docker'
+  args:
+  - 'build'
+  - '--tag=gcr.io/$PROJECT_ID/docker:18.09.6'
+  - '--file=Dockerfile-18.09.6'
+  - '.'
+  id: '18.09.6'
+# Future supported versions of docker builder go here.
