@@ -1,8 +1,13 @@
 FROM launcher.gcr.io/google/ubuntu16_04
 
-CMD virtualenv --python python3 ~/envs/venv
-CMD  source ~/envs/venv/bin/activate
-CMD  pip install -r requirements.txt
-CMD  flask run
+LABEL maintainer="Michal Shaffer <chalshaff12@gmail.com>"
+
+RUN apt-get update
+RUN apt-get install -y python3 python3-dev python2-pip nginx
+RUN pip3 install uwsgi
+RUN python3 -m venv venv
+RUN soucre venv/bin/activate
+RUN pip3 install -r requirements.txt
+RUN python3 app.py
 
 ENTRYPOINT ["/cisc3140python2"]
