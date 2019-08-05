@@ -9,4 +9,5 @@ steps:
   - 'gcr.io/$PROJECT_ID/myimage'
   - '.'
   id: '18.09.6'
-  images: ['gcr.io/$PROJECT_ID/myimage']
+  images: 
+    - 'gcr.io/$PROJECT_ID/myimage'
