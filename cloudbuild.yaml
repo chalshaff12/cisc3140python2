@@ -7,4 +7,4 @@ steps:
   - '--tag=gcr.io/$PROJECT_ID/docker:18.09.6'
   - '--file=Dockerfile-18.09.6'
   - '.'
-images: ['gcr.io/$PROJECT_ID/myimage']
+images: ['gcr.io/$PROJECT_ID/docker:18.09.6']

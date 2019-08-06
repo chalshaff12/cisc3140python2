@@ -32,7 +32,7 @@ You can also install them directly from the file:
 You are almost ready to launch this program!
 Throw the following command into terminal to tell flask where the main program file is:
 ```
-(venv)$> export FLASK_APP=cisc3140.py
+(venv)$> export FLASK_APP=main.py
 ```
 You're done! All you need to do now is run the program:
 ```
