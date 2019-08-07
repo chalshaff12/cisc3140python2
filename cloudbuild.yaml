@@ -1,10 +1,11 @@
 
+#this file tells Google Cloud Build what the steps of the build are.
+#my app required only one step, calling the dockerfile.
 steps:
-# Build all supported versions.
-- name: 'gcr.io/cloud-builders/docker'
+- name: 'gcr.io/cloud-builders/docker' #name of the step
   args:
-  - 'build'
-  - '--tag=gcr.io/$PROJECT_ID/docker:18.09.6'
-  - '--file=Dockerfile-18.09.6'
+  - 'build' #build
+  - '--tag=gcr.io/$PROJECT_ID/docker:18.09.6' #set the tag of the step
+  - '--file=Dockerfile-18.09.6' #call the docker file
   - '.'
-images: ['gcr.io/$PROJECT_ID/docker:18.09.6']
+images: ['gcr.io/$PROJECT_ID/docker:18.09.6'] #created a dockerimage of the build
